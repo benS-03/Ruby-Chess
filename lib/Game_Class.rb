@@ -39,8 +39,8 @@ class Game
                     if board[piece_conv]== nil
                         puts "There Is No Piece There"
                         next
-                    elsif board[piece_conv].team == c
-                        puts "That Is Not You Piece"
+                    elsif board[piece_conv].team != c.zero? 
+                        puts "That Is Not Your Piece"
                         next
                     elsif board[piece_conv].available_moves.empty?
                         puts "That Piece Has No Moves"

@@ -48,14 +48,16 @@ class Chess_board
     end
 
 
-    def render_board()
+    def render_board
 
         8.times do |r|
+            print (8-r).to_s + "    |"
             8.times do |c|
                 print self[[r,c]].nil? ? "  |" : self[[r,c]].to_s + " |"
             end
-            print "\n__ __ __ __ __ __ __ __\n"
+            print "\n"
         end
+        puts "      A  B  C  D  E  F  G  H"
     end
 
 end

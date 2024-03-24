@@ -17,6 +17,9 @@ class Knight < Chess_piece
         ]
     end
 
+
+
+
     def available_moves
         moves = []
         
@@ -34,10 +37,6 @@ class Knight < Chess_piece
 
 
     end
-
-
-
-      
 
 
     def to_s

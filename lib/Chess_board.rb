@@ -2,7 +2,9 @@
 
 class Chess_board
 
-    attr_reader :board
+    attr_reader :board, :white_king, :black_king
+    
+    attr_writer :white_king, :black_king
 
     def initialize()
         @board = [Array.new(8),
@@ -13,6 +15,9 @@ class Chess_board
                   Array.new(8),
                   Array.new(8),
                   Array.new(8),]
+
+        @white_king = [7,4]
+        @black_king = [0,4]
 
     end
 
@@ -45,6 +50,22 @@ class Chess_board
     def [](loc)
         row, column = loc
         board[row][column]
+    end
+
+    def white_in_check?
+
+        if self[white_king].check?(white_king)
+            return true
+        end
+        false
+    end
+
+    def black_in_check?
+
+        if self[black_king].check?(black_king)
+            return true
+        end
+        false
     end
 
 

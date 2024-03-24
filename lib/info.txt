@@ -1,3 +1,11 @@
-white always on bottom
-
-white is true, black is false
+TODO
+    - Check System
+        - force king move or block in Check
+        - DONE check if move is valid ( if move will put you in check) DONE
+        - checkmate ( should be pretty easy, valid move should take into account possible checls andd if it 
+                      returns an array of lenght 0 its checkmate)
+        
+    - Castling
+    - En Passaqnt ( stupid )
+    - dispaying of taken pieces
+    - passsed pawn system

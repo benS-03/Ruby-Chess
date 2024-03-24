@@ -8,5 +8,16 @@ def main
 
 end
 
+def othermain
+a = [[1,2],[2,3],[5,6]]
+
+a.each_with_index do |a,b,i|
+
+    puts a.to_s, b.to_s ,i.to_s
+end
+
+
+end
+
 main
 

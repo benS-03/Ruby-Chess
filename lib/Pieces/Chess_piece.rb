@@ -10,6 +10,16 @@ class Chess_piece
     end
 
 
+    def ally?(loc)
+        if !empty?(loc)
+    
+            return (board[loc].team) == (team)
+        else
+            false
+        end
+    end
+    
+
    def enemy?(loc)
     if !empty?(loc)
 
@@ -20,7 +30,7 @@ class Chess_piece
    end
 
    def empty?(loc)
-    board[loc] == nil
+    inBounds?(loc) && board[loc] == nil
    end
 
    def inBounds?(loc)
@@ -30,8 +40,27 @@ class Chess_piece
    def validate_move?(loc)
 
         moves = available_moves
-        if moves.include?(loc)
-            return true
+        if moves.include?(loc) 
+
+            a = board[loc]
+            board[loc] = self
+
+            if team
+                if !board.white_in_check?
+                    board[loc] = a
+                    board[location] = self
+                    return true
+                end
+            else
+                if ! board.black_in_check?
+                    board[loc] = a
+                    board[location] = self
+                    return true
+                end
+            end
+
+            board[loc] = a
+            board[location] = self
         end
             false
     end

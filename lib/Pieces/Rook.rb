@@ -34,7 +34,7 @@ class Rook < Chess_piece
         moves
 
 
-    end      
+    end
     
 
     def to_s
